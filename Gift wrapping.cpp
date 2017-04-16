@@ -75,7 +75,7 @@ points=new Point[N];
 for (int i = 0; i < N; i++)
 {  
   cin>>points[i].x>>points[i].y;
-  
+}  
 //add timer here to calculate execution time
 clock_t start;
 double duration;
