@@ -27,7 +27,7 @@ int pointLocation(point A, point B, point P)
             return -1;
     }
     
- int distance(Point A, Point B, Point C)
+ int distance(point A, point B, point C)
     {
         int ABx = B.x - A.x;
         int ABy = B.y - A.y;
@@ -39,8 +39,9 @@ int pointLocation(point A, point B, point P)
     
   void hullSet(point A, point B, vector<point>set,vector<point>hull)
   {
+  	vector<point>::iterator it;
   	 it=find(hull.begin(),hull.end(),B);
-  	 int insertPosition = *it;
+  	 
   	 
   	if (set.size() == 0)
             return;
