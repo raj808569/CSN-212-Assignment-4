@@ -1,5 +1,6 @@
 #include<iostream>
 #include <bits/stdc++.h>
+#include <boost/bind.hpp>
 using namespace std;
  
 struct point
@@ -37,10 +38,11 @@ int pointLocation(point A, point B, point P)
         return num;
     }
     
-  void hullSet(point A, point B, vector<point>set,vector<point>hull)
+  void hullSet(point A, point B, vector<point>set,vector<point>&hull)
   {
   	vector<point>::iterator it;
-  	 it=find(hull.begin(),hull.end(),B);
+  	point alpha=B;
+  	 it=find_if(hull.begin(),hull.end(),boost::bind (&point::x, _1 ) == alpha.x );
   	 
   	 
   	if (set.size() == 0)
