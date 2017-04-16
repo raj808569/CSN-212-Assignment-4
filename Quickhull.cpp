@@ -152,9 +152,25 @@ void convexHull(point sample[], int n)
 }
 
 int main() {
-	 point sample[] = {{0, 3}, {2, 2}, {1, 1}, {2, 1},
-                      {3, 0}, {0, 0}, {3, 3}};
-    int n = sizeof(sample)/sizeof(sample[0]);
-    convexHull(sample, n);
-	return 0;
+	 int N;
+cout << "Enter no of points N "<<endl;
+cin>>N;
+point sample[N];
+
+for (int i = 0; i < N; i++)
+{  
+  cin>>sample[i].x>>sample[i].y;
+}  
+//add timer here to calculate execution time
+clock_t start;
+double duration;
+start = clock();
+
+cout << "The points in the convex hull are: "<<endl;
+convexHull(sample, N);
+
+duration = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+cout<<"time: "<<duration <<" seconds"<<endl;
+return 0;
 }
+
