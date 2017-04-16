@@ -1,4 +1,4 @@
-
+#include<iostream>
 #include <bits/stdc++.h>
 using namespace std;
  
@@ -59,15 +59,15 @@ int pointLocation(point A, point B, point P)
         for (int i = 0; i <set.size(); i++)
         {
             point p = set[i];
-            int distance = distance(A, B, p);
-            if (distance > dist)
+            int distan = distance(A, B, p);
+            if (distan > dist)
             {
-                dist = distance;
+                dist = distan;
                 furthestPoint = i;
             }
         }
     
-     Point P = set[furthestPoint];
+     point P = set[furthestPoint];
         set.erase(set.begin()+furthestPoint-1);
         hull.insert(it, P);
         
@@ -126,8 +126,8 @@ void convexHull(point sample[], int n)
          hull.push_back(sample[minPoint]);
          hull.push_back(sample[maxPoint]);
          
-        Point A = sample[minPoint];
-        Point B = sample[maxPoint];
+        point A = sample[minPoint];
+        point B = sample[maxPoint];
          
           for(int i=0;i<n; i++)
         {
